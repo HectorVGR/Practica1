@@ -57,7 +57,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 100000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 50000; ui32Loop++)
         {
         }
          GPION->DATA |= 0x02;
@@ -66,7 +66,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 100000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 50000; ui32Loop++)
         {
         }
         //
@@ -78,16 +78,16 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 10000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 50000; ui32Loop++)
         {
         }
-                GPION->DATA &= ~(0x02);
+                GPION->DATA &= ~(0x03); // apagarlos todos 
         //GPIO_PORTN_DATA_R &= ~(0x01);
 
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 10000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 400000; ui32Loop++) // Hacer más largo el apagado
         {
         }
   }
