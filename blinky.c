@@ -16,7 +16,7 @@ int main() {
                         //operacione con bitwise
                         // N      J       F     B
     SYSCTL->RCGCGPIO |= (1<<12)|(1<<8)|(1<<5)|(1<<1);
-    SYSCTL->RCGCGPIO |= 0x1122;
+    //SYSCTL->RCGCGPIO |= 0x1122; hexadecimal
     while((SYSCTL->PRGPIO&0x00000100) == 0){;} // allow time for clock to stabilize
     ui32Loop = SYSCTL->RCGCGPIO;
     //Salidas
@@ -44,8 +44,7 @@ int main() {
     //GPION->DIR  = 0x03; 
     //GPION->DEN  = 0x03;
 
-  /*Super micros*/
-/*esto es una actualizacion*/
+
 
   while (1U)
   {
@@ -58,7 +57,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 2000000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 100000; ui32Loop++)
         {
         }
          GPION->DATA |= 0x02;
@@ -67,7 +66,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 2000000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 100000; ui32Loop++)
         {
         }
         //
@@ -79,7 +78,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 10000; ui32Loop++)
         {
         }
                 GPION->DATA &= ~(0x02);
@@ -88,8 +87,7 @@ int main() {
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < 10000; ui32Loop++)
         {
         }
   }
-}
